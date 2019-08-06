@@ -9,7 +9,7 @@ Crawpy can do recursive scan, take screenshots for given status codes.
 ### Recursive Discovery
 [![asciicast](https://asciinema.org/a/lKav0RTvViRmj8db9hyJALOfn.svg)](https://asciinema.org/a/lKav0RTvViRmj8db9hyJALOfn?speed=10)
 ### Screenshot Mode
-![gif](https://im4.ezgif.com/tmp/ezgif-4-5fd9b64a2971.gif)
+![gif](https://github.com/SecTest-Innovera/crawpy/blob/master/screenshots/crawpy.gif)
 
 
 # Installation
