@@ -15,7 +15,7 @@ Crawpy can do recursive scan, take screenshots for given status codes.
 # Installation
 ```
 git clone https://github.com/SecTest-Innovera/crawpy
-pip -r install requirements.txt
+pip install  -r requirements.txt
 ```
 
 # Usage 
