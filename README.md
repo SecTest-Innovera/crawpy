@@ -1,28 +1,25 @@
 # Crawpy
 
-Crawpy is a web discovery tool. It was written to create general recon of given domain.
-Crawpy can do recursive scan, take screenshots for given status codes.
+Simple content discovery tool with some cool features. <br/>
 
 ### Basic Discovery
-[![asciicast](https://asciinema.org/a/jVPdNGGpafo3K4feQRoSuCpLI.svg)](https://asciinema.org/a/jVPdNGGpafo3K4feQRoSuCpLI?speed=3)
+[![asciicast](https://asciinema.org/a/297821.svg)](https://asciinema.org/a/297821)
 
 ### Recursive Discovery
-[![asciicast](https://asciinema.org/a/lKav0RTvViRmj8db9hyJALOfn.svg)](https://asciinema.org/a/lKav0RTvViRmj8db9hyJALOfn?speed=10)
-### Screenshot Mode
-![gif](https://github.com/SecTest-Innovera/crawpy/blob/master/screenshots/crawpy.gif)
+[![asciicast](https://asciinema.org/a/297820.svg)](https://asciinema.org/a/297820?speed=10)
 
 
 # Installation
 ```
-git clone https://github.com/SecTest-Innovera/crawpy
-pip install  -r requirements.txt
+git clone https://github.com/morph3/crawpy
+pip install -r requirements.txt
 ```
 
 # Usage 
 ```
-python main.py --help
-usage: main.py [-h] [-u URL] [-w WORDLIST] [-t THREADS] [-r] [-x EXTENTION]
-               [-to TIMEOUT] [-ss [SCREENSHOT]] [-s STATUS] [-o OUTPUT]
+usage: crawpy.py [-h] [-u URL] [-w WORDLIST] [-t THREADS] [-r] [-x EXTENSION]
+                 [-to TIMEOUT] [-ss [SCREENSHOT]] [-s STATUS] [-o OUTPUT]
+                 [-X HTTP_METHOD]
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -32,25 +29,31 @@ optional arguments:
   -t THREADS, --threads THREADS
                         Number of threads
   -r, --recursive       Recursive scan
-  -x EXTENTION, --extention EXTENTION
-                        Add extentions at the end. Seperate them with comas
+  -x EXTENSION, --extension EXTENSION
+                        Add extensions at the end. Seperate them with comas
                         example: -x php,html,txt
   -to TIMEOUT, --timeout TIMEOUT
                         Timeout
   -ss [SCREENSHOT], --screenshot [SCREENSHOT]
                         Takes screenshot of valid requests. Default is
-                        200,204,301,302,307
+                        200,204,301,302,307,401,403
   -s STATUS, --status-code STATUS
                         Status codes to be checked Default is
-                        200,204,301,302,307
+                        200,204,301,302,307,401,403
   -o OUTPUT, --output OUTPUT
                         Output file
+  -X HTTP_METHOD, --http-method HTTP_METHOD
+                        Http request type
 ```
 
 # Examples
 
 ```
-python main.py -u https://morph3sec.com -w common.txt --screenshot 200
-python main.py -u https://morph3sec.com -w common.txt --screenshot 200 -r --status-code 200,301 -o output.txt
+python3 crawpy.py -u https://morph3sec.com -w /opt/SecLists/Discovery/Web-Content/common.txt
+python3 crawpy.py -u https://morph3sec.com -w /opt/SecLists/Discovery/Web-Content/common.txt -r -t 50
+python3 crawpy.py -u https://morph3sec.com -w /opt/SecLists/Discovery/Web-Content/common.txt -r -t 50 -x php -ss 200,301 
+python3 crawpy.py -u https://morph3sec.com -w /opt/SecLists/Discovery/Web-Content/common.txt -r -t 50 -x php -ss 200,301,401 -s 200,301,401,403
 ```
+
+
 

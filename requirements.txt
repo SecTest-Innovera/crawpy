@@ -1,3 +1,6 @@
 selenium
 requests
-resource
+tqdm
+urllib3
+argparse
+termios
