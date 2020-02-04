@@ -13,6 +13,8 @@ Simple content discovery tool with some cool features. <br/>
 ```
 git clone https://github.com/morph3/crawpy
 pip install -r requirements.txt
+or
+python3 -m pip install -r requirements.txt
 ```
 
 # Usage 
